@@ -4,22 +4,20 @@
 using namespace std;
 
 class Position{
+
     private:
-    int x;
+    const int x;
     int y;
 
     public:
-        // Constructor
-        Position(int a = 0, int b = 0){
-            x = a;
-            y = b;
-        };
+        // Class constructor initializing the constant
+        Position(int a = 0, int b = 0):x(a), y(b){};
 
     void changeValues(){
         int temp;
-        temp = y;
-        y = x;
-        x = temp;
+        // temp = y;
+        // y = x;
+        // x = temp;
     };
 
     void getPosition(){
