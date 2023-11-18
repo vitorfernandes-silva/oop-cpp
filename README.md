@@ -1,2 +1,2 @@
 # POO-cpp
- Material da disciplina de POO da minha graduação em Ciência Da Computação
+ Studies of the Object Oriented Programming discipline of my degree in Computer Science
