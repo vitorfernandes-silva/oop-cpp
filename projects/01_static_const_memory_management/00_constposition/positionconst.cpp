@@ -13,8 +13,9 @@ class Position{
         // Class constructor initializing the constant
         Position(int a = 0, int b = 0):x(a), y(b){};
 
+    // Don't care this method
     void changeValues(){
-        int temp;
+        // int temp;
         // temp = y;
         // y = x;
         // x = temp;
