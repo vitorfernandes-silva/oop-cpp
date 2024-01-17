@@ -2,6 +2,7 @@
 #define COMPLEXO_H
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class Complexo
@@ -15,9 +16,11 @@ class Complexo
         double get_imag() {return im;}
 
         // Definindo Operadores
-        Complexo operator+(Complexo&);
         Complexo operator-(Complexo&);
-        friend void print(const Complexo&);
+        operator int();
+        friend Complexo operator+(Complexo&, Complexo&);
+        friend ostream& operator<<(ostream&, const Complexo&);
+        friend istream& operator>>(istream&, Complexo&);
 
 };
 
@@ -28,10 +31,10 @@ Complexo::Complexo (double r, double i) : re{r}, im{i}{}
 
 // Sobrecarga de Operadores
 // Soma
-Complexo Complexo::operator+(Complexo& c){
+Complexo operator+(Complexo& c1, Complexo& c2){
     double r, i;
-    r = re + c.get_real();
-    i = im + c.get_imag();
+    r = c1.re + c2.re;
+    i = c1.im + c2.im;
 
     return Complexo{r,i};
 }
@@ -45,23 +48,37 @@ Complexo Complexo::operator-(Complexo& c){
     return Complexo{r,i};
 }
 
-void print(const Complexo& c){
-    cout << c.re << "+ (" << c.im << ")i";
+ostream& operator<<(ostream& out, const Complexo& c){
+    out << c.re << "+ (" << c.im << ")i";
+    return out;
+}
+
+istream& operator>>(istream& in, Complexo& c){
+    in >> c.re >> c.im;
+    return in;
+}
+
+Complexo::operator int(){
+    return sqrt(re*re + im*im);
 }
 
 int main()
 {
-    Complexo a{10,0};
-    Complexo b{10,15};
+    Complexo a, b;
 
-    a = a + b; // Notação direta e simples
-    //a = a.operator+(b); // Notação Explícita funcional
-    b = b - a; // Representação Aritmética comum
+    cout << "Entre com o complexo a: ";
+    cin >> a;
+    cout << "Entre com o complexo b: ";
+    cin >> b;
 
+    //a = a + b;
+    //b = b - a;
+    
     cout << "Numeros criados: \n";
-    print(a);
-    cout << endl;
-    print(b);
+    cout << a << " e " << b << endl;
+
+    cout << "Convertidos para inteiro: \n";
+    cout << (int) a << " e " << (int) b;
 
     return 0;
 }
