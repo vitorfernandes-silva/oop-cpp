@@ -14,6 +14,7 @@ using namespace std;
     }
 
     Complexo Complexo::add(Complexo& par){
+
         float x = this->re + par.re;
         float y = this->im + par.im;
 
