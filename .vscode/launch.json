@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/vitoorfeer/Documentos/Github/oop-cpp/projects/exercicios/ex000_sobrecarga",
-      "program": "/home/vitoorfeer/Documentos/Github/oop-cpp/projects/exercicios/ex000_sobrecarga/build/Debug/outDebug",
+      "cwd": "/home/vitoorfeer/Documentos/Github/oop-cpp/projects/004_polymorphism/000_shape",
+      "program": "/home/vitoorfeer/Documentos/Github/oop-cpp/projects/004_polymorphism/000_shape/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
